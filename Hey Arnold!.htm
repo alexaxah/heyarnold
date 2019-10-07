@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///Users/alexaxah/Desktop/public_html4/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./Hey Arnold!_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hey Arnold!</title>
+    <style>
+
+    p.logo{
+      text-align:center;
+    }
+    body{
+      font-family: serif;
+    }
+    h2.q1{
+      text-align: center;
+      margin:10px;
+      font-family: helvetica;
+    }
+.coloroptions{
+  text-align: center;
+}
+input:checked + label img {
+  border:2px solid #000000;
+}
+input[name="color-pick"] {
+  display: none;
+}
+input[name="meme"] {
+  display: none;
+}
+
+#nope {
+display: none;
+}
+
+#sayyes {
+display: none;
+}
+
+#impress {
+display: none;
+}
+
+#forward {
+display: none;
+}
+#statement {
+display: none;
+}
+.tvmemes{
+  text-align: center;
+  width: auto;
+  height: auto;
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<div class="container-fluid">
+<p class="logo">
+<img src="./Hey Arnold!_files/logo.png" class="img-fluid" alt="Responsive image">
+</p>
+</div>
+<div class="card bg-dark text-white">
+  <img src="./Hey Arnold!_files/crew.jpg" class="card-img" alt="Responsive image">
+  <div class="card-img-overlay" <="" div="">
+</div>
+</div>
+<!--header-->
+
+<div class="container-fluid">
+<h2 class="q1"> What is your favorite color?</h2>
+
+<form id="form1" class="coloroptions">
+
+    <input name="color-pick" value="teal" type="radio" id="teal">
+    <label for="teal">
+      <img src="./Hey Arnold!_files/teal.jpeg" class="color" alt="Responsive image">
+    </label>
+
+
+    <input name="color-pick" value="pink" type="radio" id="pink">
+    <label for="pink">
+      <img src="./Hey Arnold!_files/pink.jpeg" class="color" alt="Responsive image">
+    </label>
+
+    <input name="color-pick" value="red" type="radio" id="red">
+    <label for="red">
+      <img src="./Hey Arnold!_files/red.png" class="color" alt="Responsive image">
+    </label>
+
+    <input name="color-pick" value="blue" type="radio" id="blue">
+    <label for="blue">
+      <img src="./Hey Arnold!_files/blue.png" class="color" alt="Responsive image">
+    </label>
+<h2 id="selected">You never know what could happen!</h2>
+
+<h2 class="q1"> Which would you do on your spare time?</h2>
+    <input name="situation" value="help" type="radio" id="help">
+    <label for="help">
+       Help someone in need
+    </label>
+    <input name="situation" value="plot" type="radio" id="plot">
+    <label for="plot">
+      Come up with plots &amp; schemes
+    </label>
+    <input name="situation" value="sport" type="radio" id="sport">
+    <label for="sport">
+      Play a sport
+    </label>
+    <input name="situation" value="book" type="radio" id="book">
+    <label for="book">
+      Read a book
+    </label>
+<h2 id="answer">plot</h2>
+
+
+    <h2>When you have a crush, what do you do?</h2>
+
+    <select id="thedropdown">
+      <option value="0"></option>
+      <option value="1">Nothing, you're afraid of rejection</option>
+      <option value="2">Keep trying</option>
+      <option value="3">Impress them with your skills</option>
+      <option value="4">Be strightforward and ask them out</option>
+    </select>
+    </form>
+
+    <p class="tvmemes">
+    <span id="nope" style="display: none;"><img src="./Hey Arnold!_files/nope.gif" width="400"></span>
+    <span id="sayyes" style="display: none;"><img src="./Hey Arnold!_files/sayyes.gif" width="400"></span>
+    <span id="impress" style="display: none;"><img src="./Hey Arnold!_files/impressive.gif" width="400"></span>
+    <span id="forward" style="display: none;"><img src="./Hey Arnold!_files/forward.gif" width="400"></span>
+  </p>
+    <p id="statement" style="display: block;"> Please choose an option</p>
+
+
+
+
+
+<script>
+document.getElementById("form1").onchange = function() {
+result = document.querySelector('input[name = "color-pick"]:checked').value;
+if(result=="teal"){
+  document.getElementById("selected").innerHTML="You are open-minded and not quick to judge.";
+}
+if(result=="pink"){
+  document.getElementById("selected").innerHTML="You express your emotions and have an increased emotional energy.";
+}
+if(result=="red"){
+  document.getElementById("selected").innerHTML="You are out-going, attention seeking and ambitious.";
+}
+if(result=="blue"){
+  document.getElementById("selected").innerHTML="You are professional, different, and sometimes serious.";
+}
+
+
+reveal = document.querySelector('input[name = "situation"]:checked').value;
+
+
+if(reveal=="help"){
+  document.getElementById("selected").innerHTML="What goes around comes around!";
+}
+if(reveal=="plot"){
+  document.getElementById("selected").innerHTML="You never know what could happen!";
+}
+if(reveal=="sport"){
+  document.getElementById("selected").innerHTML="Stay active!";
+}
+if(reveal=="book"){
+  document.getElementById("selected").innerHTML="Keep that brain healthy!"
+}
+
+
+document.getElementById("answer").innerHTML = reveal;
+
+
+
+document.getElementById("nope").style.display = "none";
+document.getElementById("sayyes").style.display = "none";
+document.getElementById("impress").style.display = "none";
+document.getElementById("forward").style.display = "none";
+document.getElementById("statement").style.display = "none";
+
+
+choice=document.getElementById("thedropdown").value;
+if (choice == 1) {
+document.getElementById("nope").style.display = "block";
+}
+
+if(choice == 2) {
+document.getElementById("sayyes").style.display = "block";
+}
+
+if (choice == 3) {
+document.getElementById("impress").style.display = "block";
+}
+
+if (choice == 4) {
+document.getElementById("forward").style.display = "block";
+}
+if (choice == 0) {
+document.getElementById("statement").style.display = "block";
+}
+}
+
+</script>
+
+
+
+
+
+
+</div><!--container-fluid-->
+
+
+<script src="./Hey Arnold!_files/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="./Hey Arnold!_files/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="./Hey Arnold!_files/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body></html>
